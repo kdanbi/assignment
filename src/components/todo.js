@@ -4,7 +4,6 @@ import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
-let arraySort = require('array-sort');
 
 export default class Todo extends React.Component {
     state = {
@@ -26,7 +25,7 @@ export default class Todo extends React.Component {
 
     onSubmit = event => {
         event.preventDefault();
-        console.log(event.target.datepicker);
+        //console.log(event.target.datepicker);
         const postInfo = {
             title: event.target.title.value,
             description: event.target.description.value,
@@ -39,7 +38,7 @@ export default class Todo extends React.Component {
                 axios
                     .get(`http://localhost:8888/items/`)
                     .then(res => {
-                        console.log(res.data);
+                        //console.log(res.data);
                         this.setState({
                             items: res.data.itemArray
                     });
@@ -59,7 +58,7 @@ export default class Todo extends React.Component {
             .then(response => {
                 const items = response.data;
                 this.setState({ items })
-                console.log(items);
+                //console.log(items);
         })
             .catch(error => {
             console.log(error)
@@ -88,7 +87,7 @@ export default class Todo extends React.Component {
                             />
                         </div>
                         <div className="todo-subheadings">
-                            <label className="status-label">Status</label>
+                            <label className="status-label">Status/Remove</label>
                         </div>
                         <button className="todo-button" type="submit">Add</button>
                     </div>
@@ -96,7 +95,7 @@ export default class Todo extends React.Component {
                 <section className="todo-item-container">
                 {
                     this.state.items.map((item, id) => {
-                        return <TodoItem item={item} removeItem={this.removeItem}/>
+                        return <TodoItem key={id} item={item} removeItem={this.removeItem}/>
                     })
                 }
 			    </section>
