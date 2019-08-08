@@ -1,0 +1,67 @@
+.App {
+    height: 100vh;
+}
+.subheadings {
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 100%;
+}
+.todo-form {
+    display: flex;
+    width: 50%;
+    height: 100px;
+    margin: auto;
+}
+.todo-form-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+.todo-subheadings {
+    display: flex;
+    flex-direction: column;
+}
+.todo-description {
+    width: 300px;
+}
+.todo-button {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+input {
+    height: 1.5rem;
+}
+.status-label {
+    width: 100px;
+}
+.todo-item {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    margin: auto;
+    justify-content: flex-start;
+    margin: auto;
+    a {
+        display: flex;
+        text-decoration: none;
+        color: black;
+    }
+    &__complete {
+        background-color: green;
+    }
+    &__pending {
+        background-color: orange;
+    }
+}
+.item1 {
+    width: 131px;
+}
+.item2 {
+    width: 300px;
+}
+.item3 {
+    width: 131px;
+}
